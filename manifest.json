@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Google Quick Search",
+  "version": "2.0",
+  "description": "Быстрый поиск Google при выделении текста",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_title": "Google Quick Search",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "quick-search@example.com",
+      "strict_min_version": "109.0"
+    }
+  }
+}
